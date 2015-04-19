@@ -61,7 +61,7 @@ if [ ! -e /usr/bin/subl ]; then
     # first add the apt-get-repository dependencies
     sudo apt-get -y install software-properties-common python-software-properties
     # now install sublime text 3 from PPA
-    sudo add-apt-repository ppa:webupd8team/sublime-text-3
+    sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
     sudo apt-get update
     sudo apt-get install sublime-text-installer
 fi
