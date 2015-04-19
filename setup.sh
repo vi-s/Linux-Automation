@@ -1,5 +1,12 @@
+#!/bin/bash
+
+# first upgrade repository cache 
 sudo apt-get upgrade
+
+# install system essential packages
 sudo apt-get -y build-dep build-essential
+
+# install basic utilities
 sudo apt-get -y install vim
 sudo apt-get -y install ngrep
 sudo apt-get -y install jq
@@ -43,7 +50,7 @@ fi
 if [ ! -e /usr/bin/spotify ]; then
     # 1. Add this line to your list of repositories by
     #    editing your /etc/apt/sources.list
-    sudo echo "deb http://repository.spotify.com stable non-free" | sudo tee -a /etc/apt/sources.list
+    echo "deb http://repository.spotify.com stable non-free" | sudo tee -a /etc/apt/sources.list
 
     # 2. If you want to verify the downloaded packages,
     #    you will need to add our public key
@@ -67,10 +74,10 @@ if [ ! -e /usr/bin/subl ]; then
 fi
 
 # install btsync
-#***You will have to att the btsync executable to startup programs
-if [ ! -e ~/btsync ]; then
+#***You will have to add the ~/btsyncf/btsync executable to startup programs
+if [ ! -e ~/btsyncf ]; then
     curl -LO https://download-cdn.getsyncapp.com/stable/linux-x64/BitTorrent-Sync_x64.tar.gz
-    mkdir btsync
-    tar -xzf *Sync*.tar.gz -C btsync
+    mkdir btsyncf
+    tar -xzf *Sync*.tar.gz -C btsyncf
 fi
 
