@@ -63,7 +63,7 @@ if [ ! -e /usr/bin/subl ]; then
     # now install sublime text 3 from PPA
     sudo add-apt-repository ppa:webupd8team/sublime-text-3
     sudo apt-get update
-  i****ijk  sudo apt-get install sublime-textk-installer
+    sudo apt-get install sublime-text-installer
 fi
 
 # install btsync
