@@ -16,6 +16,8 @@ sudo apt-get -y install guake
 sudo apt-get -y install curl
 sudo apt-get -y install git
 sudo apt-get -y install xclip
+sudo apt-get -y install gpodder
+sudo apt-get -y install fbreader
 
 # install amix's vimrc
 git clone git://github.com/amix/vimrc.git ~/.vim_runtime
@@ -41,7 +43,6 @@ fi
 # install movet utility
 if [ ! -e ~/personal-media-server ]; then
     git clone https://github.com/vi-s/personal-media-server.git
-
     # sym link movet from git-repo to /usr/bin
     sudo ln -s ~/personal-media-server/torrent_mover/movet /usr/bin/movet
 fi
