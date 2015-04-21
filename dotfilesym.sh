@@ -3,6 +3,8 @@
 # A script to make sym links from my cloned github dotfiles directory
 # to the actual appropriate location on the system.
 
+# ASSUMES: ~/dotfiles contains your cloud copy of dotfiles (probably cloned from github)
+
 ########## Variables
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
