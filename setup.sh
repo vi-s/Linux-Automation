@@ -18,6 +18,7 @@ sudo apt-get -y install git
 sudo apt-get -y install xclip
 sudo apt-get -y install gpodder
 sudo apt-get -y install fbreader
+sudo apt-get -y install focuswriter
 
 # install amix's vimrc
 git clone git://github.com/amix/vimrc.git ~/.vim_runtime
