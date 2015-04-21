@@ -12,7 +12,7 @@ sudo apt-get -y install ngrep
 sudo apt-get -y install jq
 sudo apt-get -y install vlc
 sudo apt-get -y install deluge
-sudo apt-get -y install terminator
+sudo apt-get -y install guake
 sudo apt-get -y install curl
 sudo apt-get -y install git
 sudo apt-get -y install xclip
