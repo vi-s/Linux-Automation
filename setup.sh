@@ -77,7 +77,17 @@ fi
 #***You will have to add the ~/btsyncf/btsync executable to startup programs
 if [ ! -e ~/btsyncf ]; then
     curl -LO https://download-cdn.getsyncapp.com/stable/linux-x64/BitTorrent-Sync_x64.tar.gz
-    mkdir btsyncf
+    mkdir ~/btsyncf
     tar -xzf *Sync*.tar.gz -C btsyncf
 fi
+
+# install tor-browser
+if [ ! -e ~/tor_browser ]; then
+    curl -LO https://www.torproject.org/dist/torbrowser/4.0.8/tor-browser-linux64-4.0.8_en-US.tar.xz
+    mkdir ~/tor_browser
+    tar -xvJf tor-browser*.tar.xz -C ~/tor_browser
+    rm tor-browser*.tar.xz
+    sudo ln -s ~/tor_browser/tor-browser_en-US/Browser/start-tor-browser /usr/bin/torbr
+fi
+
 
