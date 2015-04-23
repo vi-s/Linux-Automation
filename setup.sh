@@ -50,7 +50,7 @@ fi
 # clone personal-media-server if not present
 # install movet utility
 if [ ! -e ~/personal-media-server ]; then
-    git clone https://github.com/vi-s/personal-media-server.git
+    git clone https://github.com/vi-s/personal-media-server.git ~/
     # sym link movet from git-repo to /usr/bin
     sudo ln -s ~/personal-media-server/torrent_mover/movet /usr/bin/movet
 fi
@@ -87,7 +87,7 @@ fi
 if [ ! -e ~/btsyncf ]; then
     curl -LO https://download-cdn.getsyncapp.com/stable/linux-x64/BitTorrent-Sync_x64.tar.gz
     mkdir ~/btsyncf
-    tar -xzf *Sync*.tar.gz -C btsyncf
+    tar -xzf *Sync*.tar.gz -C ~/btsyncf
 fi
 
 # install tor-browser
