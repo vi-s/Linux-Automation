@@ -89,6 +89,7 @@ if [ ! -e ~/btsyncf ]; then
     curl -LO https://download-cdn.getsyncapp.com/stable/linux-x64/BitTorrent-Sync_x64.tar.gz
     mkdir ~/btsyncf
     tar -xzf *Sync*.tar.gz -C ~/btsyncf
+    rm *Sync*.tar.gz
 fi
 
 # install tor-browser
