@@ -50,7 +50,8 @@ fi
 # clone personal-media-server if not present
 # install movet utility
 if [ ! -e ~/personal-media-server ]; then
-    git clone https://github.com/vi-s/personal-media-server.git ~/
+    cd ~
+    git clone https://github.com/vi-s/personal-media-server.git
     # sym link movet from git-repo to /usr/bin
     sudo ln -s ~/personal-media-server/torrent_mover/movet /usr/bin/movet
 fi
