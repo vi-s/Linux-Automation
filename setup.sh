@@ -27,6 +27,9 @@ sudo apt-get -y install focuswriter
 # sudo apt-get -y install wine
 # sudo apt-get -y install dosbox
 
+# go to homdir
+cd ~
+
 # install amix's vimrc
 git clone git://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_basic_vimrc.sh
