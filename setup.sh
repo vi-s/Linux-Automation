@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # first upgrade repository cache 
+sudo apt-get update
 sudo apt-get upgrade
 
 # install system essential packages
@@ -38,6 +39,7 @@ sh ~/.vim_runtime/install_basic_vimrc.sh
 if [ ! -e ~/.oh-my-zsh ]; then
     sudo apt-get -y install zsh
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+    # change the shell
     chsh -s `which zsh`
 fi
 
@@ -104,3 +106,13 @@ if [ ! -e ~/tor_browser ]; then
     rm tor-browser*.tar.xz
     sudo ln -s ~/tor_browser/tor-browser_en-US/Browser/start-tor-browser /usr/bin/torbr
 fi
+
+# Install recent generic linux kernel for trusty
+# sudo apt-get install linux-image-generic-lts-trusty
+# Install AUFS support
+# sudo apt-get -y install linux-image-virtual && sudo apt-get -y install linux-image-extra-virtual
+
+# Install apt-fast
+sudo add-apt-repository ppa:saiarcot895/myppa
+sudo apt-get update
+sudo apt-get -y install apt-fast
