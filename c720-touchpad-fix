@@ -12,12 +12,7 @@ if [ ! -e /usr/share/X11/xorg.conf.d/20-mouse.conf ]; then
     echo "Installing 20-mouse"
 	cp /usr/share/xf86-input-cmt/20-mouse.conf /usr/share/X11/xorg.conf.d
 fi
-# install 40 touchpad conf if not present (chromium multi touch config)
-if [ ! -e /usr/share/X11/xorg.conf.d/40-touchpad-cmt.conf ]; then
-	echo "Installing 40-toucpad-cmt"
-    sudo cp /usr/share/xf86-input-cmt/xorg-conf/40-touchpad-cmt.conf /usr/share/X11/xorg.conf.d
-fi
-# Install the 50 touchpad peppy conf (c720 specific cmt config)
+# Install the cmt 50 touchpad peppy conf (c720 specific chromium multi touch config)
 sudo cp /usr/share/xf86-input-cmt/50-touchpad-cmt-peppy.conf /usr/share/X11/xorg.conf.d/
 echo "REBOOTING NOW!!!"
 sudo reboot
