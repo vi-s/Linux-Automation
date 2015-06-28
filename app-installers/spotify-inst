@@ -1,0 +1,17 @@
+#!/bin/bash
+# install spotify
+if [ ! -e /usr/bin/spotify ]; then
+    # 1. Add this line to your list of repositories by
+    #    editing your /etc/apt/sources.list
+    echo "deb http://repository.spotify.com stable non-free" | sudo tee -a /etc/apt/sources.list
+
+    # 2. If you want to verify the downloaded packages,
+    #    you will need to add our public key
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 94558F59
+
+    # 3. Run apt-get update
+    sudo apt-get update
+
+    # 4. Install spotify!
+    sudo apt-get -y install spotify-client
+fi

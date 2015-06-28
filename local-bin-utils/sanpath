@@ -1,0 +1,7 @@
+#!/bin/bash
+echo /media/removable/SANMINI64
+
+# use this script with an alias named 'entersan' 
+# to allow easy entrance to usb dir. Like so:
+# alias entersan="cd $(sanpath)"
+# This line should be in your zshrc

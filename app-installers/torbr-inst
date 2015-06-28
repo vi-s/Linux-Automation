@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# install tor-browser
+TOR_BROWSER_URL=https://www.torproject.org/dist/torbrowser/4.0.8/tor-browser-linux64-4.0.8_en-US.tar.xz
+if [ ! -e ~/tor_browser ]; then
+    curl -LO $TOR_BROWSER_URL
+    mkdir ~/tor_browser
+    tar -xvJf tor-browser*.tar.xz -C ~/tor_browser
+    rm tor-browser*.tar.xz
+    sudo ln -s ~/tor_browser/tor-browser_en-US/Browser/start-tor-browser /usr/bin/torbr
+fi

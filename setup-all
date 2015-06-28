@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+# first upgrade repository cache 
+sudo apt-get update
+sudo apt-get upgrade
+
+# Install apt-fast
+sudo add-apt-repository ppa:saiarcot895/myppa
+sudo apt-get update
+sudo apt-get -y install apt-fast
+
+# install system essential packages
+sudo apt-fast -y build-dep build-essential
+
+# install basic utilities
+sudo apt-fast -y install vim
+sudo apt-fast -y install ngrep
+sudo apt-fast -y install jq
+sudo apt-fast -y install vlc
+sudo apt-fast -y install deluge
+sudo apt-fast -y install guake
+sudo apt-fast -y install curl
+sudo apt-fast -y install git
+sudo apt-fast -y install xclip
+sudo apt-fast -y install gpodder
+sudo apt-fast -y install fbreader
+sudo apt-fast -y install focuswriter
+
+# Optional Packages
+# sudo apt-fast -y install extremetuxracer
+# sudo apt-fast -y install wine
+# sudo apt-fast -y install dosbox
+
+# go to homdir
+cd ~/Chromebook-Automation
+
+# install all shell-comps
+for file in ./shell-components/*; do
+    echo "Shell Comp File: $file"
+    $file
+done
+
+# Execute all app-installer scripts
+for file in ./app-installers/*; do
+    echo "App Inst File: $file"
+    $file
+done
+
+# Install compton
+./compton/install-compton
+
+# Copy bin utils to local bin
+sudo cp ./local-bin-utils/* /usr/local/bin/
+
+echo "And the final CD is:" $(pwd)
+
+# Install recent generic linux kernel for trusty
+# sudo apt-get install linux-image-generic-lts-trusty
+# Install AUFS support
+# sudo apt-get -y install linux-image-virtual && sudo apt-get -y install linux-image-extra-virtual
+

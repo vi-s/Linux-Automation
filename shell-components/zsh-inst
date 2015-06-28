@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# install oh-my-zsh
+if [ ! -e ~/.oh-my-zsh ]; then
+    sudo apt-get -y install zsh
+    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+    # change the shell
+    chsh -s `which zsh`
+fi
