@@ -52,10 +52,9 @@ done
 # Copy bin utils to local bin
 sudo cp ./local-bin-utils/* /usr/local/bin/
 
-echo "And the final CD is:" $(pwd)
+echo "And the final PWD is:" $(pwd)
 
 # Install recent generic linux kernel for trusty
 # sudo apt-get install linux-image-generic-lts-trusty
 # Install AUFS support
 # sudo apt-get -y install linux-image-virtual && sudo apt-get -y install linux-image-extra-virtual
-
