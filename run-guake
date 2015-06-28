@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # use as startup script
 # run guake with the propper utf-8 environment var settings
 export LC_ALL=en_US.UTF-8

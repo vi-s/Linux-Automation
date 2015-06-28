@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo "Fixing chrome touchpad on acer c720..."
 sudo add-apt-repository ppa:hugegreenbug/cmt2
 sudo apt-get update

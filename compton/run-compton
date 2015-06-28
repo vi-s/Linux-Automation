@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# opts: c to enable shadows, b for background
+compton -cb
+

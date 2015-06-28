@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+sudo apt-add-repository ppa:richardgv/compton
+sudo apt-get update && sudo apt-get install compton
+cp compton.conf ~/.compton.conf
+
+# add the following line to application autostart
+# opts: c to enable shadows, b for background
+# compton -cb
