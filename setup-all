@@ -34,8 +34,8 @@ sudo apt-fast -y install focuswriter
 # go to homdir
 cd ~/Chromebook-Automation
 
-# install all shell-comps
-for file in ./shell-components/*; do
+# install all shell installs
+for file in ./shell-installers/*; do
     echo "Shell Comp File: $file"
     $file
 done
