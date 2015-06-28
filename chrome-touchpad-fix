@@ -6,15 +6,15 @@ sudo apt-get install -y libevdevc libgestures xf86-input-cmt
 if [ -e /usr/share/X11/xorg.conf.d/50-synaptics.conf ]; then
 	sudo mv /usr/share/X11/xorg.conf.d/50-synaptics.conf /usr/share/X11/xorg.conf.d/50-synaptics.conf.old
 fi
-# install 20 mouse conf if not present (generic mouse config)
+# install 20 mouse conf if not present (generic ChromeOS mouse config)
 if [ ! -e /usr/share/X11/xorg.conf.d/20-mouse.conf ]; then
 	cp /usr/share/xf86-input-cmt/20-mouse.conf /usr/share/X11/xorg.conf.d
 fi
-# install 40 touchpad conf if not present
+# install 40 touchpad conf if not present (chromium multi touch config)
 if [ ! -e /usr/share/X11/xorg.conf.d/40-touchpad-cmt.conf ]; then
 	sudo cp /usr/share/xf86-input-cmt/xorg-conf/40-touchpad-cmt.conf /usr/share/X11/xorg.conf.d
 fi
-# Install the 50 touchpad peppy conf
+# Install the 50 touchpad peppy conf (c720 specific cmt config)
 sudo cp /usr/share/xf86-input-cmt/50-touchpad-cmt-peppy.conf /usr/share/X11/xorg.conf.d/
 echo "REBOOTING NOW!!!"
 sudo reboot
