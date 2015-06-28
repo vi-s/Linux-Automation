@@ -1,10 +1,20 @@
 echo "Fixing chrome touchpad on acer c720..."
 sudo add-apt-repository ppa:hugegreenbug/cmt2
-sudo apt-fast update
-sudo apt-fast install -y libevdevc
-sudo apt-fast install -y libgestures
-sudo apt-fast install -y xf86-input-cmt
-sudo mv /usr/share/X11/xorg.conf.d/50-synaptics.conf /usr/share/X11/xorg.conf.d/50-synaptics.conf.old
+sudo apt-get update
+sudo apt-get install -y libevdevc libgestures xf86-input-cmt
+# rename old driver config if necessary
+if [ -e /usr/share/X11/xorg.conf.d/50-synaptics.conf ]; then
+	sudo mv /usr/share/X11/xorg.conf.d/50-synaptics.conf /usr/share/X11/xorg.conf.d/50-synaptics.conf.old
+fi
+# install 20 mouse conf if not present (generic mouse config)
+if [ ! -e /usr/share/X11/xorg.conf.d/20-mouse.conf ]; then
+	cp /usr/share/xf86-input-cmt/20-mouse.conf /usr/share/X11/xorg.conf.d
+fi
+# install 40 touchpad conf if not present
+if [ ! -e /usr/share/X11/xorg.conf.d/40-touchpad-cmt.conf ]; then
+	sudo cp /usr/share/xf86-input-cmt/xorg-conf/40-touchpad-cmt.conf /usr/share/X11/xorg.conf.d
+fi
+# Install the 50 touchpad peppy conf
 sudo cp /usr/share/xf86-input-cmt/50-touchpad-cmt-peppy.conf /usr/share/X11/xorg.conf.d/
 echo "REBOOTING NOW!!!"
 sudo reboot
