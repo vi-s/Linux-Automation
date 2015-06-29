@@ -25,6 +25,8 @@ sudo apt-fast -y install xclip
 sudo apt-fast -y install gpodder
 sudo apt-fast -y install fbreader
 sudo apt-fast -y install focuswriter
+# install zram config
+sudo apt-fast -y install zram-config
 
 # Optional Packages
 # sudo apt-fast -y install extremetuxracer
@@ -58,3 +60,4 @@ echo "And the final PWD is:" $(pwd)
 # sudo apt-get install linux-image-generic-lts-trusty
 # Install AUFS support
 # sudo apt-get -y install linux-image-virtual && sudo apt-get -y install linux-image-extra-virtual
+
