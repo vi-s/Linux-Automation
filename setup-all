@@ -52,13 +52,13 @@ cd ~/Chromebook-Automation
 
 # install all shell installs
 for file in ./shell-installers/*; do
-    echo "Shell Comp File: $file"
+    echo "Executing Shell Inst File: $file"
     $file
 done
 
 # Execute all app-installer scripts
 for file in ./app-installers/*; do
-    echo "App Inst File: $file"
+    echo "Executing App Inst File: $file"
     $file
 done
 
