@@ -1,37 +1,51 @@
 #!/usr/bin/env bash
 
-# first upgrade repository cache 
-sudo apt-get update
-sudo apt-get upgrade
+# either 'apt-fast' or 'apt-get'
+# apt-fast has easy ppa installation on ubuntu.. 
+package_mgr='apt-fast'
 
-# Install apt-fast
-sudo add-apt-repository ppa:saiarcot895/myppa
-sudo apt-get update
-sudo apt-get -y install apt-fast
+if [[ $package_mgr == 'apt-fast' ]]; then
+	echo 'Debian Package Manager Selected'
+	echo 'PACKAGE MANAGER:' $package_mgr
+	# Install apt-fast
+	sudo add-apt-repository -y ppa:saiarcot895/myppa
+	sudo apt-get update
+	sudo apt-get -y install apt-fast
+elif [[ $package_mgr == 'apt-get' ]]; then
+	echo 'Debian Package Manager Selected'
+	echo 'PACKAGE MANAGER:' $package_mgr
+else
+	echo 'Non-Debian Package Manager Selected'
+	echo 'PACKAGE MANAGER:' $package_mgr
+fi
+
+# first upgrade repository cache 
+sudo $package_mgr update
+sudo $package_mgr upgrade
 
 # install system essential packages
-sudo apt-fast -y build-dep build-essential
+sudo $package_mgr -y build-dep build-essential
 
 # install basic utilities
-sudo apt-fast -y install vim
-sudo apt-fast -y install ngrep
-sudo apt-fast -y install jq
-sudo apt-fast -y install vlc
-sudo apt-fast -y install deluge
-sudo apt-fast -y install guake
-sudo apt-fast -y install curl
-sudo apt-fast -y install git
-sudo apt-fast -y install xclip
-sudo apt-fast -y install gpodder
-sudo apt-fast -y install fbreader
-sudo apt-fast -y install focuswriter
+sudo $package_mgr -y install vim
+sudo $package_mgr -y install ngrep
+sudo $package_mgr -y install jq
+sudo $package_mgr -y install vlc
+sudo $package_mgr -y install deluge
+sudo $package_mgr -y install guake
+sudo $package_mgr -y install curl
+sudo $package_mgr -y install git
+sudo $package_mgr -y install xclip
+sudo $package_mgr -y install gpodder
+sudo $package_mgr -y install fbreader
+sudo $package_mgr -y install focuswriter
 # install zram config
-sudo apt-fast -y install zram-config
+sudo $package_mgr -y install zram-config
 
 # Optional Packages
-# sudo apt-fast -y install extremetuxracer
-# sudo apt-fast -y install wine
-# sudo apt-fast -y install dosbox
+# sudo $package_mgr -y install extremetuxracer
+# sudo $package_mgr -y install wine
+# sudo $package_mgr -y install dosbox
 
 # go to homdir
 cd ~/Chromebook-Automation
