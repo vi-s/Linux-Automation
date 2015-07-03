@@ -7,7 +7,7 @@ if [ ! -e /usr/bin/spotify ]; then
 
     # 2. If you want to verify the downloaded packages,
     #    you will need to add our public key
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 94558F59
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 
     # 3. Run apt-get update
     sudo apt-get update
