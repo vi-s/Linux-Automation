@@ -6,6 +6,7 @@ if [ ! -e ~/btsyncf ]; then
     mkdir ~/btsyncf
     tar -xzf *Sync*.tar.gz -C ~/btsyncf
     rm *Sync*.tar.gz
+    mkdir ~/Downloads/tor_transfer
 fi
 
 # download personal media server, and install movet utility
