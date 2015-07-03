@@ -43,7 +43,9 @@ sudo $package_mgr -y install vim
 sudo $package_mgr -y install ngrep
 sudo $package_mgr -y install jq
 # vlc doesn't get installed sometimes, weirdly
-sudo $packagem_gr -y install vlc
+# found out that bug happened because I spelled $package_mgr as $packagem_gr..
+# bash scripts can be hard to debug, no useful error messages for bad vars
+sudo $package_mgr -y install vlc
 sudo $package_mgr -y install deluge
 sudo $package_mgr -y install guake
 sudo $package_mgr -y install curl
