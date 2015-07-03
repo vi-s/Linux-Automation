@@ -42,6 +42,7 @@ sudo $package_mgr -y build-dep build-essential
 sudo $package_mgr -y install vim
 sudo $package_mgr -y install ngrep
 sudo $package_mgr -y install jq
+# vlc doesn't get installed sometimes, weirdly
 sudo $packagem_gr -y install vlc
 sudo $package_mgr -y install deluge
 sudo $package_mgr -y install guake
