@@ -16,7 +16,7 @@ getRelease() {
 # Install dependencies for add-apt-repository
 sudo apt-get install -y python-software-properties software-properties-common
 
-if [[ $package_mgr == 'apt-fast' && getDistribution == 'Ubuntu' ]]; then
+if [[ $package_mgr == 'apt-fast' && $(getDistribution) == 'Ubuntu' ]]; then
 	echo 'Debian Package Manager Selected'
 	echo 'PACKAGE MANAGER:' $package_mgr
 	# Install apt-fast
