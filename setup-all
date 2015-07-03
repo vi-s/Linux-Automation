@@ -4,7 +4,19 @@
 # apt-fast has easy ppa installation on ubuntu.. 
 package_mgr='apt-fast'
 
-if [[ $package_mgr == 'apt-fast' ]]; then
+# Methods to get distribution information
+getDistribution() {
+	cat /etc/*-release | sed -e "s/=/ /g" | awk '$1=="DISTRIB_ID" {print $2};'
+}
+
+getRelease() {
+	cat /etc/*-release | sed -e "s/=/ /g" | awk '$1=="DISTRIB_RELEASE" {print $2};'
+}
+
+# Install dependencies for add-apt-repository
+sudo apt-get install -y python-software-properties software-properties-common
+
+if [[ $package_mgr == 'apt-fast' && getDistribution == 'Ubuntu' ]]; then
 	echo 'Debian Package Manager Selected'
 	echo 'PACKAGE MANAGER:' $package_mgr
 	# Install apt-fast
@@ -30,7 +42,7 @@ sudo $package_mgr -y build-dep build-essential
 sudo $package_mgr -y install vim
 sudo $package_mgr -y install ngrep
 sudo $package_mgr -y install jq
-sudo $package_mgr -y install vlc
+sudo $packagem_gr -y install vlc
 sudo $package_mgr -y install deluge
 sudo $package_mgr -y install guake
 sudo $package_mgr -y install curl

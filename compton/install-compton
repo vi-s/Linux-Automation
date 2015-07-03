@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 cd compton # no need to cd to orig directory, since this is subshell
 sudo apt-add-repository -y ppa:richardgv/compton
-sudo apt-get update && sudo apt-get install compton
+sudo apt-get update && sudo apt-get install -y compton
 cp compton.conf ~/.compton.conf
 # add run-compton script to startup apps
