@@ -6,7 +6,7 @@ import subprocess
 def exec_movet():
 	threading.Timer(10.0, exec_movet).start()
 	subprocess.Popen(
-		['/usr/local/bin/movet']
+		['movet'] # found in /usr/local/bin/movet
 	)
 
 exec_movet()
