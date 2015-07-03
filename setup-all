@@ -33,7 +33,7 @@ fi
 
 # first upgrade repository cache 
 sudo $package_mgr update
-sudo $package_mgr upgrade
+sudo $package_mgr -y upgrade
 
 # install system essential packages
 sudo $package_mgr -y build-dep build-essential
