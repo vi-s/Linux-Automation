@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# ARG 1 (Optional): MB of swap to allocate
+# Allocate 2048 MB or 2GB of swap by default when no arg given
+
+if [[ $# -eq 1 ]]; then
+	swapmb=$1
+else
+	swapmb='2048'
+fi
+
+# Allocate 2GB Swap Space
+# TO UNMOUNT THE SWAP SPACE, simply issue: 'swapoff -a'
+sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=$swapmb
+sudo /sbin/mkswap /var/swap.1
+sudo /sbin/swapon /var/swap.1
