@@ -13,6 +13,9 @@ getRelease() {
 	cat /etc/*-release | sed -e "s/=/ /g" | awk '$1=="DISTRIB_RELEASE" {print $2};'
 }
 
+# Configure dpkg
+sudo dpkg --configure -a
+
 # Install dependencies for add-apt-repository
 sudo apt-get install -y python-software-properties software-properties-common
 
@@ -56,6 +59,7 @@ sudo $package_mgr -y install fbreader
 sudo $package_mgr -y install focuswriter
 # install zram config
 sudo $package_mgr -y install zram-config
+sudo $package_mgr -y install k4dirstat
 
 # Optional Packages
 # sudo $package_mgr -y install extremetuxracer
